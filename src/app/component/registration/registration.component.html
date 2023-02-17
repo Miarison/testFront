@@ -1,0 +1,47 @@
+
+<mat-tab-group>
+  <mat-tab label="List of users">
+      <div>
+          <app-users [newUser]="newUser"></app-users>
+      </div>
+  </mat-tab>
+  <mat-tab label="Add new user">
+      <div style="margin-top:5%">
+          <mat-card class="form-container">
+              <mat-card-content>
+                  <form (ngSubmit)="onSubmit(registrationForm)" #registrationForm="ngForm">
+                      <p>
+                          <mat-form-field appearance="outline">
+                              <mat-label>firstname</mat-label>
+                              <input type="text" name="firstname" matInput placeholder="firstname" autofocus ngModel required>
+                          </mat-form-field>
+
+                          <mat-form-field appearance="outline">
+                              <mat-label>lastname</mat-label>
+                              <input type="text" name="lastname" matInput placeholder="lastname" ngModel required>
+                          </mat-form-field>
+                      </p>
+                      <p>
+                          <mat-form-field appearance="outline">
+                              <mat-label>username</mat-label>
+                              <input type="text" name="username" matInput placeholder=" username" autofocus ngModel required>
+                          </mat-form-field>
+                           <mat-form-field appearance="outline">
+                              <mat-label> password</mat-label>
+                              <input name="password" matInput [type]="hide ? 'password' : 'text'" ngModel required>
+                              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                  [attr.aria-pressed]="hide">
+                                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                              </button>
+                          </mat-form-field>
+    
+                      </p>
+                      <p>
+                          <button mat-button color="primary" type="submit" >Register</button>
+                      </p>
+                  </form>
+              </mat-card-content>
+          </mat-card>
+      </div>
+  </mat-tab>
+</mat-tab-group>

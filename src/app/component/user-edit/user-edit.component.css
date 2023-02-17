@@ -1,0 +1,27 @@
+
+form{
+  align-self: center;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.form-control{
+  width: 100px !important
+}
+
+p>button{
+  width: 50%;
+  color: white;
+  background-color:  #0074D9;;
+  letter-spacing: 5px;
+}
+.first-letter{
+  color: red !important;
+  font-weight: bold;
+  font-size: x-large;
+}
+mat-form-field{
+  margin: 5px;
+  width: 200px;
+}
